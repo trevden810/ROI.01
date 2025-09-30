@@ -151,7 +151,7 @@ def main():
         # Test API connection by getting available sports
         print("\nFetching available sports...")
         sports = client.get_sports()
-        print(f"✓ Successfully connected! {len(sports)} sports available")
+        print(f"[OK] Successfully connected! {len(sports)} sports available")
         
         # Initialize analyzer
         analyzer = ArbitrageAnalyzer(
@@ -194,7 +194,7 @@ def main():
                 opportunities = analyzer.find_arbitrage(events)
                 
                 if opportunities:
-                    print(f"\n🎯 Found {len(opportunities)} arbitrage opportunity(ies)!\n")
+                    print(f"\n[TARGET] Found {len(opportunities)} arbitrage opportunity(ies)!\n")
                     for opp in opportunities:
                         print(analyzer.format_opportunity(opp))
                         print()
@@ -204,7 +204,7 @@ def main():
                 
             except Exception as e:
                 logger.error(f"Error processing {sport}: {str(e)}")
-                print(f"⚠ Error processing {sport}: {str(e)}")
+                print(f"[WARNING] Error processing {sport}: {str(e)}")
         
         # Summary
         print("\n" + "=" * 80)
@@ -226,7 +226,7 @@ def main():
         logger.info("Application interrupted by user")
     except Exception as e:
         logger.error(f"Fatal error: {str(e)}", exc_info=True)
-        print(f"\n⚠ Fatal error: {str(e)}")
+        print(f"\n[ERROR] Fatal error: {str(e)}")
         print("Check logs/roi_*.log for details")
         sys.exit(1)
     finally:
