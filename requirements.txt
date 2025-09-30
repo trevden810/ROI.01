@@ -1,0 +1,25 @@
+# Core Dependencies
+requests==2.31.0
+python-dotenv==1.0.0
+
+# Data Processing
+pandas==2.2.0
+numpy==1.26.3
+
+# Database
+sqlite3  # Built-in with Python
+
+# Configuration
+pyyaml==6.0.1
+
+# Logging
+colorlog==6.8.0
+
+# Testing (for Phase 2)
+pytest==7.4.3
+pytest-cov==4.1.0
+
+# Optional: For future web dashboard
+# flask==3.0.0
+# fastapi==0.109.0
+# uvicorn==0.27.0

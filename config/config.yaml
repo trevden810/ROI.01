@@ -1,0 +1,35 @@
+# ROI.01 Configuration File
+# Most settings should be in .env, but you can override them here
+
+app:
+  name: "ROI.01 Sports Betting Analyzer"
+  version: "0.1.0"
+  
+# The Odds API Settings
+odds_api:
+  base_url: "https://api.the-odds-api.com/v4"
+  timeout: 30
+  retry_attempts: 3
+  
+# Analysis Parameters
+arbitrage:
+  min_profit_percentage: 2.0
+  max_stake: 1000  # Maximum recommended stake for calculations
+  
+value_betting:
+  min_edge_percentage: 5.0
+  confidence_threshold: 0.60
+  
+# Notification Settings
+alerts:
+  console: true
+  file: true
+  email: false  # Not implemented in MVP
+  discord: false  # Not implemented in MVP
+  
+# Logging Configuration
+logging:
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  date_format: "%Y-%m-%d %H:%M:%S"
+  max_file_size: 10485760  # 10 MB
+  backup_count: 5
